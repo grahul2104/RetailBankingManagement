@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% include 'navbar.html' %}
+{% block content %}
+    <section id="form">
+	    <div class="container py-4">
+		    <div class="form-sub py-4" style="width: 100%;margin: 0 auto;margin-top:10px;">
+				<h3 class="text-center text-uppercase">CUSTOMER STATUS</h3><br>
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col" style="width:12%">Customer Id</th>
+                      <th scope="col" style="width:12%">Customer SSN Id</th>
+                      <th scope="col" style="width:14%">Status</th>
+                      <th scope="col" style="width:20%">Message</th>
+                      <th scope="col" style="width:20%">Last Updated</th>
+                      <th scope="col" style="width:10%">Operations</th>
+                      <th scope="col" style="width:15%">View Profile</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {% for row in rows %}
+                    <tr>
+                      <th scope="row">{{ row.cust_id }}</th>
+                      <td>{{ row.ssn_id }}</td>
+                      <td>{{ row.status }}</td>
+                      <td>{{ row.message }}</td>
+                      <td>{{ row.last_updated }}</td>
+                      <td><a href="#">Refresh</a></td>
+                      <td><a href="#">View Profile</a></td>
+                    </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+{% include 'footer.html' %}
+{% endblock content %}

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include 'head.html' %}
+<body>
+{% block content %}
+{% endblock content %}
+</body>
+{% for category, message in get_flashed_messages(with_categories=true) %}
+    <script language="javascript">
+        swal("{{ message }}", "", "{{ category }}");
+    </script>
+{% endfor %}
+</html>

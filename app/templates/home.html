@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% if session['user']['emp_type'] == 'executive' %}
+{% include 'navbar.html' %}
+{% endif %}
+{% if session['user']['emp_type'] == 'teller' %}
+{% include 'navbar_cashier.html' %}
+{% endif %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" >
+            <h2 style="margin-top:100px;">Welcome To FedChoice Bank Website. Now you can mange your content .</h2>
+        </div>
+        <div class="col-md-4">
+            <img src="static/img/person.jpeg" style="margin-left:100px;margin-top:70px;width:400px;height:400px;">
+        </div>
+    </div>
+</div>
+{% include 'footer.html' %}
+{% endblock content %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section id="form">
+	    <div class="container py-4">
+		    <div class="form-sub py-4" style="width: 60%;margin: 0 auto;background: url('static/img/man.jpg') no-repeat;background-size: cover; margin-top:100px;">
+				<h3 class="text-center text-uppercase">LOGIN TO CONTINUE</h3><br>
+				<form class="px-4 form-group" method="post" action="{{ url_for('main.login') }}" enctype="multipart/form-data">
+					<label for="usr">Username :<sup>*</sup></label>
+					<input type="text" name="username" placeholder="Enter Username" id="usr" class="form-control login-input" value="" required>
+					<label class="mt-2">Password:<sup>*</sup></label>
+					<input type="password" name="password" placeholder="Enter Password" class="form-control login-input" value="" required />
+					<div class="text-right">
+						<button class="my-3 btn submit"><span>Login</span></button>
+					</div>
+				</form>
+			 </div>
+		</div>
+    </section>
+{% endblock content %}
